@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sync365
+{
+    public class JsonObject
+    {
+        public JsonObject() { }
+        public string task { get; set; }
+        public string user { get; set; }
+        public string signature { get; set; }
+        public string outputpdf { get; set; }
+        public string guid { get; set; }
+        public string[] files { get; set; }
+        public string chatid { get; set; }
+        public string text { get; set; }
+    }
+}
