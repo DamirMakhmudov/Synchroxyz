@@ -10,6 +10,9 @@ namespace Sync365
     {
         public JsonObject() { }
         public string task { get; set; }
+        public bool Completed { get; set; }
+        public string FolderGuid { get; set; }
+        public string O_Package_Unload { get; set; }
         public string user { get; set; }
         public string signature { get; set; }
         public string outputpdf { get; set; }
