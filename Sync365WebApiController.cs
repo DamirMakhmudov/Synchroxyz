@@ -25,12 +25,13 @@ namespace Sync365
             ThisApplication = application;
             Logger = Tdms.Log.LogManager.GetLogger("Sync365WebApi");
         }
-        [Route("api/GPPtransferDocRespose"), HttpPost]
+        [Route("api/GPPtransferDocResponse"), HttpPost]
         public string PostJson([FromBody] JsonObject jsonobjectO)
         {
-            Logger.Info("GPPtransferDocRespose: started");
+            Logger.Info("GPPtransferDocResponse: started");
             jsonobject = jsonobjectO;
             TDMSObject O_Package_Unload = ThisApplication.GetObjectByGUID(jsonobject.O_Package_Unload.ToString());
+            Logger.Info(jsonobject.O_Package_Unload.ToString());
             TDMSAttributes Attrs = O_Package_Unload.Attributes;
             if (jsonobject.Completed == true)
             {
