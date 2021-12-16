@@ -31,17 +31,16 @@ namespace Sync365
             Logger.Info("GPPtransferDocResponse: started");
             jsonobject = jsonobjectO;
             TDMSObject O_Package_Unload = ThisApplication.GetObjectByGUID(jsonobject.O_Package_Unload.ToString());
-            Logger.Info(jsonobject.O_Package_Unload.ToString());
             TDMSAttributes Attrs = O_Package_Unload.Attributes;
-            if (jsonobject.Completed == true)
+            if (jsonobject.Completed)
             {
                 Attrs["A_Bool_Load"].Value = true;
                 Attrs["A_Str_GUID_External"].Value = jsonobject.FolderGuid;
                 Attrs["A_Date_Load"].Value = DateTime.Now;
                 O_Package_Unload.Status = ThisApplication.Statuses["S_Package_Unload_OnReview"];
             }
-            else { 
-
+            else {
+                O_Package_Unload.Status = ThisApplication.Statuses["S_Package_Unload_Cancel"];
             }
             //O_Package_Unload.Attributes["A_Bool_Load"].Value = true;
             //string taskText = jsonobject.task.ToString().ToLower();
