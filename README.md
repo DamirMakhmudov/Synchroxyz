@@ -17,6 +17,13 @@ attribute|Папка обмена 365|a_folder_path_365|string
 attribute|Адрес сервера|a_url_own|string
 
 #### Methods
+`POST` **api/wbscreate** Create new project structure
+```js
+{
+	projectGUID: "{2B1C6ED4-17B0-4553-8756-B631F640BB9A}",
+
+}
+
 `POST` **api/GPPtransferDocResponse**
 
 request json body:
